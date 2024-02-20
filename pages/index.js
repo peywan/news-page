@@ -6,11 +6,6 @@ const HomePage = () => {
       <header className="bg-blue-500 text-white p-4">
         <h1 className="text-2xl font-bold">News Site</h1>
       </header>
-      <div>
-        <h1>
-          hello world
-        </h1>
-      </div>
       <main className="flex-grow p-4">
         <div className="grid grid-cols-3 gap-4">
           {/* News articles will go here */}
