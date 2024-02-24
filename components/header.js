@@ -18,6 +18,9 @@ const Header = () => {
           <li>
             <Link href="/business">Business</Link>
           </li>
+          <li>
+            <Link href="/bookmarkedArticles">Bookmarked Articles</Link>
+          </li>
         </ul>
       </nav>
     </header>
