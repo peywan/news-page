@@ -1,5 +1,6 @@
 import { GetStaticProps } from "next";
-import { useBookmark } from "@/contexts/bookmarkContext";
+import { useBookmark } from "../contexts/bookmarkContext";
+
 
 //add removeBookmark or not?
 const Culture = ({ articles }) => {
@@ -17,9 +18,8 @@ const Culture = ({ articles }) => {
           {articles.map((article) => (
             <div key={article.article_id} className="bg-white shadow-md p-4">
               <button
-                className={`rounded-xl border-2 border-blue-500 px-2 py-0.5 text-sm text-blue-500 transition duration-200 hover:bg-blue-600/5 active:bg-blue-700/5 ${
-                  isBookmarked(article.article_id) ? "bookmarked" : ""
-                }`}
+                className={`rounded-xl border-2 border-blue-500 px-2 py-0.5 text-sm text-blue-500 transition duration-200 hover:bg-blue-600/5 active:bg-blue-700/5 ${isBookmarked(article.article_id) ? "bookmarked" : ""
+                  }`}
                 onClick={() => addBookmark(article)}
               >
                 {isBookmarked(article.article_id) ? "Bookmarked" : "Bookmark"}

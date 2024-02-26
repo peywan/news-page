@@ -1,30 +1,36 @@
-import { useContext, useState, createContext } from "react";
+import React, { createContext, useContext, useState, useEffect } from 'react';
 
 const BookmarkContext = createContext();
 
-//A custom hook to be used by components to access the bookmark context (the array and the functions )
-export const useBookmark = () => {
-  return useContext(BookmarkContext);
-};
+export const useBookmark = () => useContext(BookmarkContext);
 
-//The provider component (could be moved to its own component)
 export const BookmarkProvider = ({ children }) => {
-  const [bookmarks, setBookmarks] = useState([]);
+  const [bookmarks, setBookmarks] = useState(() => {
+    if (typeof window !== 'undefined') {
+      const localData = localStorage.getItem('bookmarks');
+      return localData ? JSON.parse(localData) : [];
+    }
+    return [];
+  });
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
+    }
+  }, [bookmarks]);
 
-  //functions for adding and removing bookmarks
   const addBookmark = (article) => {
-    setBookmarks([...bookmarks, article]);
+    const newBookmarks = bookmarks.some(bookmark => bookmark.article_id === article.article_id)
+      ? [...bookmarks]
+      : [...bookmarks, article];
+    setBookmarks(newBookmarks);
   };
 
   const removeBookmark = (articleId) => {
-    setBookmarks(bookmarks.filter((bookmark) => bookmark.id !== articleId));
+    const updatedBookmarks = bookmarks.filter(bookmark => bookmark.article_id !== articleId);
+    setBookmarks(updatedBookmarks);
   };
 
-  return (
-    <BookmarkContext.Provider
-      value={{ bookmarks, addBookmark, removeBookmark }}
-    >
-      {children}
-    </BookmarkContext.Provider>
-  );
+  const value = { bookmarks, addBookmark, removeBookmark };
+
+  return <BookmarkContext.Provider value={value}>{children}</BookmarkContext.Provider>;
 };
