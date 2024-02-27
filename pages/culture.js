@@ -52,16 +52,3 @@ export const getStaticProps = async () => {
 };
 
 export default Culture;
-
-{
-  /*button for the bookmark  
-              <button
-                className={`rounded-xl border-2 border-blue-500 px-3 py-1 text-base font-small text-blue-500 transition duration-200 hover:bg-blue-600/5 active:bg-blue-700/5 ${
-                  isBookmarked(article.article_id) ? "bookmarked" : ""
-                }`}
-                onClick={() => addBookmark(article)}
-              >
-                {isBookmarked(article.article_id) ? "Bookmarked" : "Bookmark"}
-              </button>{" "}
-              */
-}

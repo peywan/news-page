@@ -16,6 +16,9 @@ const Header = () => {
             <Link href="/culture">Culture</Link>
           </li>
           <li>
+            <Link href="/economy">Economy</Link>
+          </li>
+          <li>
             <Link href="/bookmarkedArticles">Bookmarked Articles</Link>
           </li>
         </ul>

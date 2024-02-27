@@ -53,3 +53,15 @@ footer {
   justify-content: center;
   flex-direction: column;
 }
+
+.page-container {
+  min-height: 100vh;
+  /* Säkerställer att containern är minst lika hög som viewporten */
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+  margin-top: auto;
+  /* Trycker footern till botten av flex-containern */
+}
