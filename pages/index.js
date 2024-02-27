@@ -14,7 +14,7 @@ export default function HomePage() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-gray-50">
+    <div className="flex flex-col min-h-screen bg-white">
       <main className="flex-grow flex items-center justify-center p-4 text-center">
         <div>
           <h1 className="text-7xl font-bold text-gray-800 mb-3" style={{ fontFamily: 'Poppins, sans-serif' }}>
@@ -24,7 +24,7 @@ export default function HomePage() {
             Din källa till de senaste nyheterna och insikterna från världen runt omkring oss.
           </p>
           {/* Uppdatera knappen för att använda onClick istället för href */}
-          <button onClick={handleExploreClick} className="bg-blue-600 text-white py-3 px-6 rounded-lg text-2xl" style={{ fontFamily: 'Poppins, sans-serif' }}>
+          <button onClick={handleExploreClick} className="bg-blue-800 text-white py-3 px-6 rounded-lg text-2xl" style={{ fontFamily: 'Poppins, sans-serif' }}>
             Utforska Nyheter
             (slumpmässig )
           </button>
