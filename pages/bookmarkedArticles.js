@@ -13,13 +13,13 @@ const BookmarkedArticles = () => {
   // Rendera endast innehållet om vi är säkra på att vi är på klienten
   return (
     <div className="mx-auto p-4 space-y-4">
-      <h1 className="text-xl font-extrabold">Your Bookmarks</h1>
+      <h1 className="text-xl font-extrabold text-white">Your Bookmarks</h1>
       {isClient && bookmarks.map((article) => (
         <div
           key={article.article_id}
           className="shadow-md rounded-lg p-4 bg-white"
         >
-          <h2 className="text-xl font-bold">{article.title}</h2>
+          <h2 className="text-xl font-bold ">{article.title}</h2>
           <img
             src={article.image_url}
             className="w-64 h-auto rounded-lg"

@@ -14,7 +14,7 @@ export default function HomePage() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-white">
+    <div className="flex flex-col min-h-screen bg-grey-600">
       <main className="flex-grow flex items-center justify-center p-4 text-center">
         <div>
           <h1 className="text-7xl font-bold text-gray-800 mb-3" style={{ fontFamily: 'Poppins, sans-serif' }}>
