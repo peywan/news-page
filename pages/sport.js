@@ -15,7 +15,7 @@ const Sport = ({ articles }) => {
             <div key={article.article_id} className="bg-white shadow-md p-4">
               <button
                 onClick={() => addBookmark(article)}
-                className={`rounded-xl border-2 border-blue-500 px-2 py-0.5 text-sm text-blue-500 transition duration-200 hover:bg-blue-600/5 active:bg-blue-700/5 ${isBookmarked(article.article_id) ? "bookmarked" : ""
+                className={`rounded-xl border-2 border-red-700 px-2 py-0.5 text-sm text-black bg-red-600/5 hover:text-grey hover:border-red-900 transition duration-200 hover:bg-blue-600/5 active:bg-blue-900/5 ${isBookmarked(article.article_id) ? "bookmarked" : ""
                   }`}
               >
 
